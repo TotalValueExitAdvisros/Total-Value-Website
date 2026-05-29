@@ -1,149 +1,195 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Total Value Exit Advisors</title>
   
-  <!-- Tailwind CDN & Web Fonts Hooks -->
+  <!-- 1. Tailwind CSS Engine for styling -->
   <script src="https://tailwindcss.com"></script>
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
           }
         }
       }
     }
   </script>
+
+  <!-- 2. React, ReactDOM, and Babel compilers -->
+  <script src="https://unpkg.com" crossorigin></script>
+  <script src="https://unpkg.com" crossorigin></script>
+  <script src="https://unpkg.com"></script>
+
+  <!-- 3. Lucide Icons global script -->
+  <script src="https://unpkg.com"></script>
 </head>
-<body class="min-h-screen bg-[#fbfaf8] text-neutral-900 font-sans">
+<body>
 
-  <!-- Header Section -->
-  <header class="sticky top-0 z-30 border-b border-neutral-200/80 bg-[#fbfaf8]/90 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-      
-      <!-- Logo Container with Fallback Script -->
-      <div class="flex items-center gap-3" aria-label="Total Value Exit Advisors">
-        <img
-          src="/mnt/data/Logo-TotalValue.png"
-          alt="Total Value Exit Advisors logo"
-          class="h-12 w-auto object-contain"
-          onerror="this.style.display='none';"
-        />
-        <div class="leading-none">
-          <div class="font-serif text-2xl tracking-tight text-[#a53030]">TotalValue</div>
-          <div class="mt-1 text-[10px] font-semibold uppercase tracking-[0.38em] text-[#a53030]">Exit Advisors</div>
-        </div>
-      </div>
+  <!-- Root mount element for React -->
+  <div id="root"></div>
 
-      <!-- Navigation Links -->
-      <nav class="hidden items-center gap-8 text-sm text-neutral-700 md:flex">
-        <a href="#services" class="hover:text-[#a53030]">Services</a>
-        <a href="#process" class="hover:text-[#a53030]">Process</a>
-        <a href="#about" class="hover:text-[#a53030]">About</a>
-        <a href="#contact" class="hover:text-[#a53030]">Contact</a>
-      </nav>
+  <!-- React Code with standard HTML integrations -->
+  <script type="text/babel">
+    const phone = "614-300-0181";
 
-      <!-- Click to Call Action Link -->
-      <a href="tel:6143000181" class="hidden rounded-full border border-[#a53030] px-4 py-2 text-sm font-medium text-[#a53030] transition hover:bg-[#a53030] hover:text-white sm:inline-flex">
-        614-300-0181
-      </a>
-    </div>
-  </header>
+    // Helper component to safely load Lucide icons in a browser setup
+    function LucideIcon({ name, className }) {
+      const IconComponent = window.lucide[name];
+      if (!IconComponent) return null;
+      return <IconComponent className={className} />;
+    }
 
-  <!-- Hero Component Section -->
-  <section class="relative overflow-hidden">
-    <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-32">
-      
-      <!-- Call to Action Content Box -->
-      <div class="max-w-3xl">
-        <p class="mb-6 inline-flex rounded-full border border-[#a53030]/20 bg-white px-4 py-2 text-sm font-medium text-[#a53030] shadow-sm">
-          Exit planning, valuation, sales, mergers, and acquisitions
-        </p>
-        <h1 class="font-serif text-5xl leading-[1.02] tracking-tight text-neutral-950 md:text-7xl">
-          Know your value. Plan your exit. Move with confidence.
-        </h1>
-        <p class="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
-          Total Value Exit Advisors helps business owners understand what their company is worth, prepare for transition, and navigate confidential sale or acquisition opportunities.
-        </p>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full bg-[#a53030] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#a53030]/15 transition hover:bg-[#8f2929]">
-            Schedule a confidential call 
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-          <a href="tel:6143000181" class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:border-[#a53030] hover:text-[#a53030]">
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            614-300-0181
-          </a>
-        </div>
-      </div>
+    const services = [
+      {
+        icon: <LucideIcon name="LineChart" className="h-5 w-5" />,
+        title: "Exit Planning",
+        text: "Prepare the business, leadership team, and financial story before going to market."
+      },
+      {
+        icon: <LucideIcon name="Scale" className="h-5 w-5" />,
+        title: "Business Valuation",
+        text: "Understand realistic market value, value drivers, and the steps that can improve outcomes."
+      },
+      {
+        icon: <LucideIcon name="Handshake" className="h-5 w-5" />,
+        title: "Business Sales",
+        text: "Confidential sell-side advisory for owners ready to explore a transition or sale."
+      },
+      {
+        icon: <LucideIcon name="ShieldCheck" className="h-5 w-5" />,
+        title: "Mergers & Acquisitions",
+        text: "Guidance through deal strategy, buyer conversations, diligence, negotiation, and closing."
+      }
+    ];
 
-      <!-- Informational Accent Card Widget -->
-      <div class="rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-900/5">
-        <div class="rounded-[1.5rem] bg-[#f4eeee] p-8">
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-[#a53030]">Owner-focused advisory</p>
-          <h2 class="mt-5 font-serif text-4xl leading-tight text-neutral-950">A quiet, practical path from planning to closing.</h2>
-          <div class="mt-8 space-y-4">
-            <div class="flex items-center gap-3 rounded-2xl bg-white/80 p-4 text-sm font-medium text-neutral-800">
-              <svg class="h-5 w-5 text-[#a53030]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Confidential process
-            </div>
-            <div class="flex items-center gap-3 rounded-2xl bg-white/80 p-4 text-sm font-medium text-neutral-800">
-              <svg class="h-5 w-5 text-[#a53030]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Clear valuation guidance
-            </div>
-            <div class="flex items-center gap-3 rounded-2xl bg-white/80 p-4 text-sm font-medium text-neutral-800">
-              <svg class="h-5 w-5 text-[#a53030]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Market-ready positioning
-            </div>
-            <div class="flex items-center gap-3 rounded-2xl bg-white/80 p-4 text-sm font-medium text-neutral-800">
-              <svg class="h-5 w-5 text-[#a53030]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Deal support from start to finish
-            </div>
+    const processSteps = [
+      "Confidential discovery call",
+      "Valuation and exit readiness review",
+      "Positioning and buyer strategy",
+      "Negotiation, diligence, and closing support"
+    ];
+
+    function Logo() {
+      return (
+        <div className="flex items-center gap-3" aria-label="Total Value Exit Advisors">
+          <img
+            src="Logo-TotalValue.png"
+            alt="Total Value Exit Advisors logo"
+            className="h-12 w-auto object-contain"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
+          />
+          <div className="leading-none">
+            <div className="font-serif text-2xl tracking-tight text-[#a53030]">TotalValue</div>
+            <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.38em] text-[#a53030]">Exit Advisors</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      );
+    }
 
-  <!-- Services Grid Section -->
-  <section id="services" class="border-y border-neutral-200 bg-white py-20">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-[#a53030]">Services</p>
-        <h2 class="mt-4 font-serif text-4xl tracking-tight text-neutral-950 md:text-5xl">Advisory built around the owner’s next chapter.</h2>
-      </div>
-      
-      <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        <!-- Card 1: Exit Planning -->
-        <article class="rounded-3xl border border-neutral-200 bg-[#fbfaf8] p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-900/5">
-          <div class="mb-6 inline-flex rounded-2xl bg-[#a53030] p-3 text-white">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.003 9.003 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-neutral-950">Exit Planning</h3>
-          <p class="mt-3 text-sm leading-6 text-neutral-600">Prepare the business, leadership team, and financial story before going to market.</p>
-        </article>
+    function TotalValueWebsite() {
+      return (
+        <main className="min-h-screen bg-[#fbfaf8] text-neutral-900">
+          <header className="sticky top-0 z-30 border-b border-neutral-200/80 bg-[#fbfaf8]/90 backdrop-blur">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+              <Logo />
+              <nav className="hidden items-center gap-8 text-sm text-neutral-700 md:flex">
+                <a href="#services" className="hover:text-[#a53030]">Services</a>
+                <a href="#process" className="hover:text-[#a53030]">Process</a>
+                <a href="#about" className="hover:text-[#a53030]">About</a>
+                <a href="#contact" className="hover:text-[#a53030]">Contact</a>
+              </nav>
+              <a
+                href={`tel:${phone.replaceAll("-", "")}`}
+                className="hidden rounded-full border border-[#a53030] px-4 py-2 text-sm font-medium text-[#a53030] transition hover:bg-[#a53030] hover:text-white sm:inline-flex"
+              >
+                {phone}
+              </a>
+            </div>
+          </header>
 
-        <!-- Card 2: Business Valuation -->
-        <article class="rounded-3xl border border-neutral-200 bg-[#fbfaf8] p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-900/5">
-          <div class="mb-6 inline-flex rounded-2xl bg-[#a53030] p-3 text-white">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-neutral-950">Business Valuation</h3>
-          <p class="mt-3 text-sm leading-6 text-neutral-600">Understand realistic market value, value drivers, and the steps that can improve outcomes.</p>
-        </article>
+          <section className="relative overflow-hidden">
+            <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-32">
+              <div className="max-w-3xl">
+                <p className="mb-6 inline-flex rounded-full border border-[#a53030]/20 bg-white px-4 py-2 text-sm font-medium text-[#a53030] shadow-sm">
+                  Exit planning, valuation, sales, mergers, and acquisitions
+                </p>
+                <h1 className="font-serif text-5xl leading-[1.02] tracking-tight text-neutral-950 md:text-7xl">
+                  Know your value. Plan your exit. Move with confidence.
+                </h1>
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
+                  Total Value Exit Advisors helps business owners understand what their company is worth, prepare for transition, and navigate confidential sale or acquisition opportunities.
+                </p>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#a53030] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#a53030]/15 transition hover:bg-[#8f2929]"
+                  >
+                    Schedule a confidential call <LucideIcon name="ArrowRight" className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={`tel:${phone.replaceAll("-", "")}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:border-[#a53030] hover:text-[#a53030]"
+                  >
+                    <LucideIcon name="Phone" className="h-4 w-4" /> {phone}
+                  </a>
+                </div>
+              </div>
 
-        <!-- Card 3: Business Sales -->
-        <article class="rounded-3xl border border-neutral-200 bg-[#fbfaf8] p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-900/5">
-          <div class="mb-6 inline-flex rounded-2xl bg-[#a53030] p-3 text-white">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-neutral-950">Business Sales</h3>
+              <div className="rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-900/5">
+                <div className="rounded-[1.5rem] bg-[#f4eeee] p-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#a53030]">Owner-focused advisory</p>
+                  <h2 className="mt-5 font-serif text-4xl leading-tight text-neutral-950">A quiet, practical path from planning to closing.</h2>
+                  <div className="mt-8 space-y-4">
+                    {["Confidential process", "Clear valuation guidance", "Market-ready positioning", "Deal support from start to finish"].map((item) => (
+                      <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/80 p-4 text-sm font-medium text-neutral-800">
+                        <LucideIcon name="CheckCircle2" className="h-5 w-5 text-[#a53030]" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="services" className="border-y border-neutral-200 bg-white py-20">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#a53030]">Services</p>
+                <h2 className="mt-4 font-serif text-4xl tracking-tight text-neutral-950 md:text-5xl">Advisory built around the owner’s next chapter.</h2>
+              </div>
+              <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                {services.map((service) => (
+                  <article key={service.title} className="rounded-3xl border border-neutral-200 bg-[#fbfaf8] p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-900/5">
+                    <div className="mb-6 inline-flex rounded-2xl bg-[#a53030] p-3 text-white">{service.icon}</div>
+                    <h3 className="text-lg font-semibold text-neutral-950">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-neutral-600">{service.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="process" className="py-20">
+            <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#a53030]">Process</p>
+                <h2 className="mt-4 font-serif text-4xl tracking-tight text-neutral-950 md:text-5xl">Simple steps. Serious discretion.</h2>
+                <p className="mt-6 text-base leading-7 text-neutral-600">
+                  The right exit starts before the listing, the teaser, or the first buyer conversation. Total Value helps owners make informed decisions at each stage.
+                </p>
+              </div>
+              <div className="space-y-4">
+                {processSteps.map((step, index) => (
+                  <div key={step} className="flex gap-5 rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm shadow-neutral-900/5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f4eeee] font-semibold text-[#a53030]">{index + 1}</div>
+                    <div>
+                      <h3 className="font-semibold text-neutral-950">{step}</h3>
+                      <p className="mt-1 text-sm leading-6 text-neutral-600">Quiet, direct guidance designed to protect the business while improving the quality of decisions.</p>
+                    </div>
